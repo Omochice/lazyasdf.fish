@@ -13,6 +13,11 @@ function lazyasdf --argument-names subcommand language --description "Use asdf l
     end
   end
 
+  if test -z $subcommand
+    echo "You must specify subcommand"
+    return 2
+  end
+
   if test -z $language
     set --function language (asdf plugin list | fzf --no-sort --tac --multi --height=30%)
     if test -z $language
