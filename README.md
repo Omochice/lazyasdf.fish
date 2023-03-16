@@ -10,6 +10,7 @@ $ fisher install Omochice/lazyasdf.fish
 
 ## Dependencies
 
+- asdf
 - fzf
 - sed
 
