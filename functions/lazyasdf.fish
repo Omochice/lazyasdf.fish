@@ -29,7 +29,7 @@ function lazyasdf --argument-names subcommand language --description "Use asdf l
     case install
       set --function selected (asdf list-all $language | fzf --no-sort --tac --multi --height=30% )
     case local global
-      set --function selected (asdf list $language | sed -e "s/^\s*\**/g" | fzf --no-sort --tac --multi --height=30%)
+      set --function selected (asdf list $language | sed -e "s/^\s*\**//g" | fzf --no-sort --tac --multi --height=30%)
   end
   if test -z $selected
     return 2
